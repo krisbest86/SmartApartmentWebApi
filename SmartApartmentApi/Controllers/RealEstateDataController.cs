@@ -21,25 +21,35 @@ namespace SmartApartmentApi.Controllers
         [Authorize("read")]
         public IActionResult GetPropertyInformation(Guid guid)
         {
-            return StatusCode(200, _unitOfWork.Properties.GetById(guid));
+
+            var result = _unitOfWork.Properties.GetById(guid);
+
+            return result == null ? StatusCode(404, $"Data for {guid} not found") : StatusCode(200, result);
         }
 
         [HttpGet("/realEstate/:city")]
         [Authorize("read")]
         public IActionResult GetRealEstateData(string city)
         {
-            return StatusCode(200, _unitOfWork.Properties.GetCityRentalEstateData(city));
+            var result = _unitOfWork.Properties.GetCityRentalEstateData(city);
+
+            return result == null ? StatusCode(404, $"Data for {city} not found") : StatusCode(200, result);
         }
 
         [HttpPost("/realEstate/:city")]
         [Authorize("insert")]
-        public IActionResult PostRealEstateData(string city, PropertyRequest propertyRequest)
+        public IActionResult PostRealEstateData(PropertyRequest propertyRequest)
         {
+            if (propertyRequest == null)
+            {
+                throw new ArgumentNullException(nameof(propertyRequest));
+            }
 
             _unitOfWork.Properties.Add(new Property()
             {
                 City = propertyRequest.City,
-
+                Name = propertyRequest.Name,
+                Price = propertyRequest.Price
             });
 
             return StatusCode(200, _unitOfWork.Complete());
