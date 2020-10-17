@@ -7,7 +7,7 @@ namespace ApiServices
     {
         public static IServiceCollection AddApiServices(this IServiceCollection services)
         {
-            
+
             services.AddScoped<IApiClient, RestApiClient>();
             return services;
         }

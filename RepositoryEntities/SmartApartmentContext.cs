@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace Domain
 {
@@ -9,7 +6,7 @@ namespace Domain
     {
         public SmartApartmentContext()
         {
-            
+
         }
 
         public DbSet<Property> Properties { get; set; }

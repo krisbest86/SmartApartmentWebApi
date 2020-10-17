@@ -1,5 +1,4 @@
 ﻿using Abstraction;
-using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using RestSharp;
 

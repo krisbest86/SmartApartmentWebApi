@@ -1,6 +1,6 @@
-﻿using System;
-using Domain;
+﻿using Domain;
 using ResponseModel;
+using System;
 
 namespace Abstraction
 {

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Abstraction;
+﻿using Abstraction;
 using Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RequestModel;
+using System;
 
 namespace SmartApartmentApi.Controllers
 {
@@ -38,12 +35,12 @@ namespace SmartApartmentApi.Controllers
         [Authorize("insert")]
         public IActionResult PostRealEstateData(string city, PropertyRequest propertyRequest)
         {
-            
-                _unitOfWork.Properties.Add(new Property()
-                {
-                    City = propertyRequest.City,
 
-                });
+            _unitOfWork.Properties.Add(new Property()
+            {
+                City = propertyRequest.City,
+
+            });
 
             return StatusCode(200, _unitOfWork.Complete());
         }

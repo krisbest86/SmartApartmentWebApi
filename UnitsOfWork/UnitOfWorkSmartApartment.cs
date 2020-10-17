@@ -1,5 +1,4 @@
-﻿using System;
-using Abstraction;
+﻿using Abstraction;
 using Domain;
 using UnitsOfWork.DataAccessImplementations;
 
@@ -12,7 +11,7 @@ namespace UnitsOfWork
         public UnitOfWorkSmartApartment(SmartApartmentContext context)
         {
             _context = context;
-            Properties =new PropertyDataAccess(context);
+            Properties = new PropertyDataAccess(context);
         }
         public void Dispose()
         {

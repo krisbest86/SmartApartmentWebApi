@@ -1,6 +1,6 @@
 ﻿namespace Abstraction
 {
-    public interface ILog 
+    public interface ILog
     {
         void Notify(string message);
         void LogError(string message);

@@ -1,9 +1,9 @@
-﻿using System;
-using Abstraction;
+﻿using Abstraction;
+using System;
 
 namespace Loggers
 {
-    public class ConsoleLogger :ILog
+    public class ConsoleLogger : ILog
     {
         public void Notify(string message)
         {
