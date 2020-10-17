@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ApiServices;
 using AuthServices;
+using Loggers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,7 +29,9 @@ namespace SmartApartmentApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddAuthOServices(Configuration);
+            services.AddAuthOServices(Configuration)
+                .AddApiServices()
+                .AddLoggers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

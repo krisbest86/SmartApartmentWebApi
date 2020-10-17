@@ -11,7 +11,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Abstraction\Abstraction.csproj" />
+    <ProjectReference Include="..\GatewayServices\ApiServices.csproj" />
+    <ProjectReference Include="..\Loggers\Loggers.csproj" />
     <ProjectReference Include="..\OAuthService\AuthServices.csproj" />
+    <ProjectReference Include="..\RequestModel\RequestModel.csproj" />
   </ItemGroup>
 
 </Project>

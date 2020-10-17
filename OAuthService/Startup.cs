@@ -4,6 +4,7 @@ using System.Security.Claims;
 using System.Text;
 using Abstraction;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -35,8 +36,7 @@ namespace AuthServices
                 options.AddPolicy("insert", policy => policy.Requirements.Add(new HasScopeRequirement("insert", domain)));
             });
 
-            services.AddSingleton<IAuthService, AuthOService>();
-
+            services.AddSingleton<IAuthorizationHandler, HasScopeHandler>();
             return services;
         }
     }
