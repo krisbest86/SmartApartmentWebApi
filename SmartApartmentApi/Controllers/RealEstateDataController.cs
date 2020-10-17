@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Abstraction;
+using Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RequestModel;
@@ -10,28 +12,40 @@ namespace SmartApartmentApi.Controllers
 {
     public class RealEstateDataController : Controller
     {
-        [HttpGet("/realEstate/:city/:guid")]
-        [Authorize("read")]
-        public IActionResult GetPropertyInformation(string city, Guid guid)
+        private readonly IUnitOfWork _unitOfWork;
+
+        public RealEstateDataController(IUnitOfWork unitOfWork)
         {
-            return Ok(city);
+            _unitOfWork = unitOfWork;
+        }
+
+
+        [HttpGet("/realEstate/:guid")]
+        [Authorize("read")]
+        public IActionResult GetPropertyInformation(Guid guid)
+        {
+            return StatusCode(200, _unitOfWork.Properties.GetById(guid));
         }
 
         [HttpGet("/realEstate/:city")]
         [Authorize("read")]
-        public IActionResult GetRealEstateData(string city, [FromBody] QueryDataRequest queryDataRequest)
+        public IActionResult GetRealEstateData(string city)
         {
-            return Ok(city);
+            return StatusCode(200, _unitOfWork.Properties.GetCityRentalEstateData(city));
         }
 
         [HttpPost("/realEstate/:city")]
         [Authorize("insert")]
         public IActionResult PostRealEstateData(string city, PropertyRequest propertyRequest)
         {
-            return Ok(new
-            {
-                Message = "Hello from a private endpoint! You need to be authenticated and have a scope of post to see this."
-            });
+            
+                _unitOfWork.Properties.Add(new Property()
+                {
+                    City = propertyRequest.City,
+
+                });
+
+            return StatusCode(200, _unitOfWork.Complete());
         }
     }
 }

@@ -5,11 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Abstraction\Abstraction.csproj" />
+    <ProjectReference Include="..\RepositoryEntities\Domain.csproj" />
+    <ProjectReference Include="..\RepositoryServices\RepositoryServices.csproj" />
   </ItemGroup>
 
 </Project>

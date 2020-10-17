@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RepositoryEntities\Domain.csproj" />
     <ProjectReference Include="..\ResponseModel\ResponseModel.csproj" />
   </ItemGroup>
 
