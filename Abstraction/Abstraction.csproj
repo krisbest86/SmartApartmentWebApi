@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ResponseModel\ResponseModel.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -2,15 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Abstraction;
 using Microsoft.AspNetCore.Mvc;
 
 namespace SmartApartmentApi.Controllers
 {
+    [ApiController]
     public class AuthenticationController : Controller
     {
-        public IActionResult Index()
+        private readonly IAuthService _authService;
+
+        public AuthenticationController(IAuthService authService)
         {
-            return View();
+            _authService = authService;
+        }
+
+        [HttpGet("/auth/token")]
+        public IActionResult GetToken()
+        {
+            var result = _authService.GetToken();
+            return StatusCode(200, result);
         }
     }
 }

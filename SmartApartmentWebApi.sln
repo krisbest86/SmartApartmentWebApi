@@ -3,25 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartApartmentApi", "SmartApartmentApi\SmartApartmentApi.csproj", "{B2240F2D-EA2B-440C-97ED-1E11AF18FB97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartApartmentApi", "SmartApartmentApi\SmartApartmentApi.csproj", "{B2240F2D-EA2B-440C-97ED-1E11AF18FB97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartApartmentUnitTests", "SmartApartmentUnitTests\SmartApartmentUnitTests.csproj", "{D0421E3B-9FED-4A2F-86DE-99C7E325A509}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartApartmentUnitTests", "SmartApartmentUnitTests\SmartApartmentUnitTests.csproj", "{D0421E3B-9FED-4A2F-86DE-99C7E325A509}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{658EE628-48DF-4274-B16B-43942E577425}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Abstraction", "Abstraction", "{B62A3A67-93E5-4A6F-AAB3-20090234A487}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementations", "Implementations", "{C3DD5DCF-31E7-4873-B680-088A1CFEC0C4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIs", "APIs", "{9270331E-4FC9-4EAA-8BD0-6F3788F0746B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abstractions", "Abstractions\Abstractions.csproj", "{8B0CB46C-6289-4EE6-9B3C-C20FE0CE3AAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abstraction", "Abstraction\Abstraction.csproj", "{8B0CB46C-6289-4EE6-9B3C-C20FE0CE3AAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthServices", "OAuthService\AuthServices.csproj", "{692C66B4-DF35-4237-BBB7-2B9AEF9A4348}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthServices", "OAuthService\AuthServices.csproj", "{692C66B4-DF35-4237-BBB7-2B9AEF9A4348}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryServices", "RepositoryServices\RepositoryServices.csproj", "{98BD868E-C0B1-4EE4-A3F4-7BFEC86E13C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryServices", "RepositoryServices\RepositoryServices.csproj", "{98BD868E-C0B1-4EE4-A3F4-7BFEC86E13C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayServices", "GatewayServices\GatewayServices.csproj", "{F18690E5-5B82-43F8-93A7-21C6D4288B55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GatewayServices", "GatewayServices\GatewayServices.csproj", "{F18690E5-5B82-43F8-93A7-21C6D4288B55}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Abstractions", "Abstractions", "{9C57C826-55BF-4F77-9D07-5063E9473F05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResponseModel", "ResponseModel\ResponseModel.csproj", "{FC3C9763-3243-4029-97C4-6239FC9E32E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{513E38A4-9203-4F3F-82E0-6AD6CCF4E2A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +57,10 @@ Global
 		{F18690E5-5B82-43F8-93A7-21C6D4288B55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F18690E5-5B82-43F8-93A7-21C6D4288B55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F18690E5-5B82-43F8-93A7-21C6D4288B55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC3C9763-3243-4029-97C4-6239FC9E32E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC3C9763-3243-4029-97C4-6239FC9E32E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC3C9763-3243-4029-97C4-6239FC9E32E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC3C9763-3243-4029-97C4-6239FC9E32E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,10 +68,11 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B2240F2D-EA2B-440C-97ED-1E11AF18FB97} = {9270331E-4FC9-4EAA-8BD0-6F3788F0746B}
 		{D0421E3B-9FED-4A2F-86DE-99C7E325A509} = {658EE628-48DF-4274-B16B-43942E577425}
-		{8B0CB46C-6289-4EE6-9B3C-C20FE0CE3AAE} = {B62A3A67-93E5-4A6F-AAB3-20090234A487}
+		{8B0CB46C-6289-4EE6-9B3C-C20FE0CE3AAE} = {9C57C826-55BF-4F77-9D07-5063E9473F05}
 		{692C66B4-DF35-4237-BBB7-2B9AEF9A4348} = {C3DD5DCF-31E7-4873-B680-088A1CFEC0C4}
 		{98BD868E-C0B1-4EE4-A3F4-7BFEC86E13C6} = {C3DD5DCF-31E7-4873-B680-088A1CFEC0C4}
 		{F18690E5-5B82-43F8-93A7-21C6D4288B55} = {C3DD5DCF-31E7-4873-B680-088A1CFEC0C4}
+		{FC3C9763-3243-4029-97C4-6239FC9E32E4} = {513E38A4-9203-4F3F-82E0-6AD6CCF4E2A6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F7FD939A-0279-465F-9E0E-1A0B2E90B733}
