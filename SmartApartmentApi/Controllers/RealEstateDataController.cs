@@ -17,17 +17,16 @@ namespace SmartApartmentApi.Controllers
         }
 
 
-        [HttpGet("/realEstate/:guid")]
+        [HttpGet("/realEstate/property/{guid}")]
         [Authorize("read")]
         public IActionResult GetPropertyInformation(Guid guid)
         {
-
             var result = _unitOfWork.Properties.GetById(guid);
 
             return result == null ? StatusCode(404, $"Data for {guid} not found") : StatusCode(200, result);
         }
 
-        [HttpGet("/realEstate/:city")]
+        [HttpGet("/realEstate/{city}")]
         [Authorize("read")]
         public IActionResult GetRealEstateData(string city)
         {
@@ -36,23 +35,25 @@ namespace SmartApartmentApi.Controllers
             return result == null ? StatusCode(404, $"Data for {city} not found") : StatusCode(200, result);
         }
 
-        [HttpPost("/realEstate/:city")]
+        [HttpPost("/realEstate")]
         [Authorize("insert")]
-        public IActionResult PostRealEstateData(PropertyRequest propertyRequest)
+        public IActionResult PostRealEstateData([FromBody] PropertyRequest propertyRequest)
         {
             if (propertyRequest == null)
             {
                 throw new ArgumentNullException(nameof(propertyRequest));
             }
 
-            _unitOfWork.Properties.Add(new Property()
+            var property = new Property()
             {
                 City = propertyRequest.City,
                 Name = propertyRequest.Name,
                 Price = propertyRequest.Price
-            });
+            };
+            _unitOfWork.Properties.Add(property);
+            _unitOfWork.Complete();
 
-            return StatusCode(200, _unitOfWork.Complete());
+            return StatusCode(200, property);
         }
     }
 }

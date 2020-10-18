@@ -7,7 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Abstraction\Abstraction.csproj" />
     <ProjectReference Include="..\RepositoryEntities\Domain.csproj" />
-    <ProjectReference Include="..\RepositoryServices\RepositoryServices.csproj" />
+    <ProjectReference Include="..\RepositoryServices\Repositories.csproj" />
   </ItemGroup>
 
 </Project>

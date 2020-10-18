@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abstraction", "Abstraction\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth0", "OAuthService\Auth0.csproj", "{692C66B4-DF35-4237-BBB7-2B9AEF9A4348}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryServices", "RepositoryServices\RepositoryServices.csproj", "{98BD868E-C0B1-4EE4-A3F4-7BFEC86E13C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "RepositoryServices\Repositories.csproj", "{98BD868E-C0B1-4EE4-A3F4-7BFEC86E13C6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiServices", "GatewayServices\ApiServices.csproj", "{F18690E5-5B82-43F8-93A7-21C6D4288B55}"
 EndProject
@@ -27,13 +27,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResponseModel", "ResponseMo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{513E38A4-9203-4F3F-82E0-6AD6CCF4E2A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestModel", "RequestModel\RequestModel.csproj", "{5D903D15-511C-40E2-B28F-6CB743268CD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RequestModel", "RequestModel\RequestModel.csproj", "{5D903D15-511C-40E2-B28F-6CB743268CD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loggers", "Loggers\Loggers.csproj", "{C660D347-B402-49B8-A0CE-5654A34F6F40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loggers", "Loggers\Loggers.csproj", "{C660D347-B402-49B8-A0CE-5654A34F6F40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "RepositoryEntities\Domain.csproj", "{A103D186-31C8-4A75-9E0B-1D4DF5870ACD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "RepositoryEntities\Domain.csproj", "{A103D186-31C8-4A75-9E0B-1D4DF5870ACD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitsOfWork", "UnitsOfWork\UnitsOfWork.csproj", "{41203267-0429-4875-8B40-9E59C3CB0C56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitsOfWork", "UnitsOfWork\UnitsOfWork.csproj", "{41203267-0429-4875-8B40-9E59C3CB0C56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

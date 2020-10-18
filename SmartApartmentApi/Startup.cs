@@ -1,12 +1,14 @@
 using ApiServices;
 using AuthServices;
+using Domain;
 using Loggers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using RepositoryServices;
+using SmartApartmentApi.Middlewares;
+using UnitsOfWork;
 
 namespace SmartApartmentApi
 {
@@ -23,10 +25,12 @@ namespace SmartApartmentApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
             services.AddAuthOServices(Configuration)
                 .AddApiServices()
-                .AddLoggers()
-                .AddRepositoryServices(Configuration);
+                .AddSmartApartmentDbContext(Configuration)
+                .AddUnitOfWorkServices()
+                .AddLoggers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +47,7 @@ namespace SmartApartmentApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                //app.UseMiddleware<RequestErrorHandler>();
+                app.UseMiddleware<ErrorHandler>();
             });
         }
     }

@@ -5,7 +5,7 @@ namespace UnitsOfWork
 {
     public static class Startup
     {
-        public static IServiceCollection AddRepositoryServices(this IServiceCollection services)
+        public static IServiceCollection AddUnitOfWorkServices(this IServiceCollection services)
         {
             services.AddScoped<IUnitOfWork, UnitOfWorkSmartApartment>();
             return services;

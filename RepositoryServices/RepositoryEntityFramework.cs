@@ -2,10 +2,10 @@
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
-namespace RepositoryServices
+namespace Repositories
 {
 
-    namespace Repository.Repository.Implementations
+    namespace Repositories
     {
         public class RepositoryEntityFramework<T, K> : IRepository<T, K>
             where T : class

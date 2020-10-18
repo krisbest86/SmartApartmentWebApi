@@ -1,6 +1,6 @@
 ﻿using Abstraction;
 using Domain;
-using RepositoryServices.Repository.Repository.Implementations;
+using Repositories.Repositories;
 using ResponseModel;
 using System;
 using System.Linq;
@@ -17,11 +17,13 @@ namespace UnitsOfWork.DataAccessImplementations
 
         public CityRentalEstateData GetCityRentalEstateData(string city)
         {
-            var result = new CityRentalEstateData();
+            var result = new CityRentalEstateData
+            {
+                AveragePrice = GetAll().Where(a => a.City == city).Average(a => a.Price),
+                MinPrice = GetAll().Where(a => a.City == city).Min(a => a.Price),
+                MaxPrice = GetAll().Where(a => a.City == city).Max(a => a.Price)
+            };
 
-            result.AveragePrice = GetAll().Average(a => a.Price);
-            result.MinPrice = GetAll().Min(a => a.Price);
-            result.MaxPrice = GetAll().Max(a => a.Price);
 
             return result;
         }
