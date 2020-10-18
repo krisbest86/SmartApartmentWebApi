@@ -15,5 +15,13 @@ namespace Domain
         }
 
         public DbSet<Property> Properties { get; set; }
+
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder
+                .EnableSensitiveDataLogging(true)
+                .UseSqlServer(@"Server=HP-KOMPUTER\SQLEXPRESS;Database=smartapartmentdb;Trusted_Connection=True");
+        }
     }
 }
